@@ -1,4 +1,4 @@
-# Benötigte Libraries zum Auslesen der Excel Files und dem Erstellen des GUIs
+# Benötigte Libraries zum Auslesen der Excel Files und dem Erstellen des GUIs (LOL)
 import xml.etree.ElementTree as ET
 import tkinter as tk
 from tkinter import filedialog
