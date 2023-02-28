@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transliterateUnits>
+    <unit>
+        <QS>m</QS>
+        <de_DE>m</de_DE>
+    </unit>
+    <unit>
+        <QS>t</QS>
+        <de_DE>t</de_DE>
+    </unit>
+    <unit>
+        <QS>m/s</QS>
+        <de_DE>m/s</de_DE>
+    </unit>
+</transliterateUnits>
