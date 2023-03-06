@@ -8,7 +8,7 @@ from openpyxl import *
 #
 def convert_to_xml():
     # Öffnen des Excel Files und Angabe des Pfads im UI
-    file_path = "data.xlsx" #filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx")])
+    file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx")]) #"data.xlsx"  für testzwecke
     wb = load_workbook(file_path, rich_text=True)
     ws = wb.active
 
@@ -50,16 +50,16 @@ def convert_to_xml():
                     cell_el = ET.SubElement(row_el, str(tag))
                     cell_el.text = str(cell.value)
     #Edge case: wenn alles in der Zelle auf die selbe weise formatiert ist, funktioniert es nicht. ->es wird immer eine "normale formatierung zusammen mit einer "besonderen erwartet (Das war aber ja auch nicht bei den vorgaben dabei)       
-    #print("---------------------")
+
 
     #Das XML leserlich machen
     ET.indent(root)
     # Schreiben des XML Files sowie angeben des Speicherorts
     tree = ET.ElementTree(root)
-    #file_path = filedialog.asksaveasfilename(defaultextension=".xml", filetypes=[("XML files", "*.xml")])
-    #tree.writeStandalone(file_path, encoding='utf-8', xml_declaration=True)
-    tree.writeStandalone("data.xml", encoding='utf-8', xml_declaration=True) #just for testing ->delete
-    #messagebox.showinfo("Information", "Datei wurde erfolgreich konvertiert.")
+    file_path = filedialog.asksaveasfilename(defaultextension=".xml", filetypes=[("XML files", "*.xml")])
+    tree.writeStandalone(file_path, encoding='utf-8', xml_declaration=True)
+    #tree.writeStandalone("data.xml", encoding='utf-8', xml_declaration=True) #just for testing ->delete
+    messagebox.showinfo("Information", "Datei wurde erfolgreich konvertiert.")
 
 root = tk.Tk()
 root.title("Excel to XML Konverter")
@@ -69,8 +69,8 @@ root.geometry("300x150")
 convert_button = tk.Button(root, text="Excel to XML konvertieren", command=convert_to_xml, height=2, bg='#4F7942', fg='#FFFFFF')
 convert_button.place(relx=0.5, rely=0.5, anchor="center")
 
-#root.mainloop()
+root.mainloop()
 
-convert_to_xml()
+#convert_to_xml()
 
 
